@@ -8,34 +8,41 @@
         /* AutoSignal Karanlık Tema (Dark Mode) */
         body { background-color: #000; color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-align: center; padding: 20px; margin: 0; }
         .container { max-width: 500px; margin: 40px auto; padding: 20px; }
-        .logo { width: 120px; margin-bottom: 30px; border-radius: 20px;}
-        h2 { font-size: 22px; font-weight: 700; margin-bottom: 24px; color: #fff; }
+        .logo { width: 120px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 4px 20px rgba(10, 132, 255, 0.2); }
+        h2 { font-size: 24px; font-weight: 800; margin-bottom: 24px; color: #fff; letter-spacing: -0.5px; }
         
-        .plate-box { background: #1C1C1E; padding: 18px; border-radius: 16px; font-size: 28px; font-weight: 900; letter-spacing: 3px; margin-bottom: 24px; border: 1px solid #333; color: #fff; }
+        /* YENİ: PLAKA GİRİŞ KUTUSU (MANUEL VEYA OTOMATİK) */
+        .plate-input { width: 100%; background: #1C1C1E; padding: 18px; border-radius: 16px; font-size: 32px; font-weight: 900; letter-spacing: 4px; margin-bottom: 24px; border: 2px solid #333; color: #fff; text-align: center; text-transform: uppercase; box-sizing: border-box; outline: none; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        .plate-input:focus { border-color: #0A84FF; background: #252528; box-shadow: 0 0 0 4px rgba(10, 132, 255, 0.15); }
+        .plate-input::placeholder { color: #444; font-weight: 800; letter-spacing: 2px; }
+        .plate-input:read-only { background: #151515; border-color: #0A84FF; color: #0A84FF; cursor: default; }
         
         /* AdSense Reklam Alanları */
         .ad-banner { background: #18181B; border: 1px dashed #444; padding: 30px 10px; margin: 24px 0; color: #777; border-radius: 12px; font-size: 14px;}
         
-        /* HAZIR ŞABLONLAR İÇİN YENİ TASARIM */
-        .templates-container { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; justify-content: center; }
-        .template-chip { background: #1C1C1E; color: #fff; border: 1px solid #333; padding: 10px 16px; border-radius: 20px; font-size: 13px; cursor: pointer; transition: 0.2s; }
-        .template-chip:hover { background: #333; }
+        /* HAZIR ŞABLONLAR İÇİN TASARIM */
+        .templates-container { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; justify-content: center; }
+        .template-chip { background: #2C2C2E; color: #fff; border: 1px solid #444; padding: 12px 18px; border-radius: 24px; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s ease; }
+        .template-chip:hover { background: #3C3C3E; border-color: #0A84FF; transform: translateY(-2px); }
+        .template-chip:active { transform: translateY(0); }
 
-        textarea { width: 100%; height: 100px; background: #1C1C1E; color: #fff; border: 1px solid #333; border-radius: 16px; padding: 16px; box-sizing: border-box; margin-bottom: 8px; font-size: 16px; resize: none; }
-        textarea:focus { outline: none; border-color: #0A84FF; }
+        textarea { width: 100%; height: 120px; background: #1C1C1E; color: #fff; border: 1px solid #333; border-radius: 16px; padding: 16px; box-sizing: border-box; margin-bottom: 8px; font-size: 16px; font-family: inherit; resize: none; transition: 0.3s; }
+        textarea:focus { outline: none; border-color: #0A84FF; background: #252528; box-shadow: 0 0 0 4px rgba(10, 132, 255, 0.1); }
         
         /* KARAKTER SAYACI */
-        .char-count { text-align: right; font-size: 12px; color: #888; margin-bottom: 24px; padding-right: 8px; }
+        .char-count { text-align: right; font-size: 13px; color: #888; margin-bottom: 24px; padding-right: 8px; font-weight: 500; }
 
-        .btn-send { background: #fff; color: #000; font-weight: 800; width: 100%; padding: 18px; border: none; border-radius: 16px; font-size: 16px; cursor: pointer; transition: 0.2s; }
-        .btn-send:hover { background: #ddd; }
-        .btn-send:disabled { background: #555; color: #888; cursor: not-allowed; }
+        .btn-send { background: #fff; color: #000; font-weight: 800; width: 100%; padding: 20px; border: none; border-radius: 16px; font-size: 18px; letter-spacing: 0.5px; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1); }
+        .btn-send:hover { background: #f0f0f0; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15); }
+        .btn-send:active { transform: translateY(0); }
+        .btn-send:disabled { background: #333; color: #666; cursor: not-allowed; box-shadow: none; transform: none; }
         
         .divider { height: 1px; background: #333; margin: 40px 0; }
         
-        .store-title { font-size: 14px; color: #888; margin-bottom: 16px; }
-        .store-buttons { display: flex; justify-content: center; gap: 12px; }
-        .store-btn { background: #1C1C1E; color: white; padding: 14px 24px; border-radius: 12px; text-decoration: none; font-size: 14px; font-weight: 600; border: 1px solid #333; flex: 1; }
+        .store-title { font-size: 15px; color: #aaa; margin-bottom: 20px; font-weight: 500; }
+        .store-buttons { display: flex; justify-content: center; gap: 16px; }
+        .store-btn { background: #1C1C1E; color: white; padding: 16px 24px; border-radius: 14px; text-decoration: none; font-size: 15px; font-weight: 600; border: 1px solid #444; flex: 1; transition: 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .store-btn:hover { background: #2C2C2E; border-color: #555; }
     </style>
 </head>
 <body>
@@ -44,14 +51,12 @@
         
         <h2>Sahibine Bildirim Gönder</h2>
         
-        <div class="plate-box" id="plateDisplay">YÜKLENİYOR...</div>
+        <input type="text" id="plateInput" class="plate-input" placeholder="34ABC123" maxlength="15" oninput="formatPlate(this)" autocomplete="off">
 
-        <div class="ad-banner">
-            Google AdSense Reklam Alanı (Üst)
-        </div>
+        <div class="ad-banner">Google AdSense Reklam Alanı (Üst)</div>
 
         <div class="templates-container">
-            <button class="template-chip" onclick="setTemplate('Hatalı park ettiniz, lütfen aracı çekin.')">Hatalı park</button>
+            <button class="template-chip" onclick="setTemplate('Hatalı park ettiniz, lütfen aracınızı çekin.')">Hatalı park</button>
             <button class="template-chip" onclick="setTemplate('Aracınızın camı açık kalmış.')">Cam açık</button>
             <button class="template-chip" onclick="setTemplate('Dörtlüleriniz yanık kalmış.')">Dörtlüler yanık</button>
             <button class="template-chip" onclick="setTemplate('Aracınızın kapısı açık.')">Kapı açık</button>
@@ -63,55 +68,30 @@
 
         <button class="btn-send" id="sendBtn" onclick="sendMessage()">BİLDİRİMİ GÖNDER</button>
 
-        <div class="ad-banner">
-            Google AdSense Reklam Alanı (Alt)
-        </div>
+        <div class="ad-banner">Google AdSense Reklam Alanı (Alt)</div>
 
         <div class="divider"></div>
         
         <div class="store-title">AutoSignal'i İndirin, Kendi Plakanızı Koruyun</div>
         <div class="store-buttons">
-            <a href="#" class="store-btn">App Store</a>
-            <a href="#" class="store-btn">Google Play</a>
+            <a href="#" class="store-btn">📱 App Store</a>
+            <a href="#" class="store-btn">🤖 Google Play</a>
         </div>
     </div>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-
-        // DİKKAT: AŞAĞIDAKİ ALANLARA KENDİ FİREBASE BİLGİLERİNİ GİR
-        const firebaseConfig = {
-            apiKey: "AIzaSyBk3c9DRwyBLC2QfrUA6fPxOTnyhom3au4",
-            authDomain: "autosignal-873cd.firebaseapp.com",
-            projectId: "autosignal-873cd",
-            storageBucket: "autosignal-873cd.firebasestorage.app",
-            messagingSenderId: "80739959987",
-  appId: "1:80739959987:web:2a7f8d499df948a3e69cc6""
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        const auth = getAuth(app);
-
-        const urlParams = new URLSearchParams(window.location.search);
-        const targetPlate = urlParams.get('plate');
-
-        if(targetPlate) {
-            document.getElementById('plateDisplay').innerText = targetPlate.toUpperCase();
-        } else {
-            document.getElementById('plateDisplay').innerText = "GEÇERSİZ PLAKA";
-            document.getElementById('sendBtn').disabled = true;
+    <script>
+        // Plaka girilirken boşlukları ve özel karakterleri silen, büyük harfe zorlayan fonksiyon
+        function formatPlate(input) {
+            let val = input.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+            input.value = val;
         }
-
-        signInAnonymously(auth).catch(error => console.error("Anonim Giriş Hatası:", error));
 
         // Şablon butonlarına basıldığında çalışacak fonksiyon
         window.setTemplate = function(text) {
             const input = document.getElementById('messageInput');
             input.value = text;
             window.updateCharCount();
+            input.focus(); 
         };
 
         // Karakter sayacını güncelleyen fonksiyon
@@ -120,40 +100,98 @@
             const countDisplay = document.getElementById('charCount');
             countDisplay.innerText = input.value.length + "/100";
         };
+    </script>
 
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBk3c9DRwyBLC2QfrUA6fPxOTnyhom3au4",
+            authDomain: "autosignal-873cd.firebaseapp.com",
+            projectId: "autosignal-873cd",
+            storageBucket: "autosignal-873cd.firebasestorage.app",
+            messagingSenderId: "80739959987",
+            appId: "1:80739959987:web:2a7f8d499df948a3e69cc6" 
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        // URL'den plakayı alma işlemi
+        const urlParams = new URLSearchParams(window.location.search);
+        const targetPlate = urlParams.get('plate');
+        const plateInput = document.getElementById('plateInput');
+
+        // Eğer kişi QR kodu okutup geldiyse (URL'de plaka varsa) kutuyu doldur ve kilitle!
+        if(targetPlate && targetPlate.trim() !== "") {
+            plateInput.value = targetPlate.toUpperCase().replace(/[^A-Z0-9]/g, '');
+            plateInput.readOnly = true; // Değiştirilemez yap
+            plateInput.placeholder = ""; 
+        }
+
+        // Güvenli veritabanı yazma işlemi için anonim giriş
+        signInAnonymously(auth).catch(error => console.error("Anonim Giriş Hatası:", error));
+
+        // Mesaj gönderme asıl fonksiyonu
         window.sendMessage = async function() {
+            let finalPlate = document.getElementById('plateInput').value.trim();
             let msg = document.getElementById('messageInput').value.trim();
-            if(!targetPlate || msg === "") {
-                alert("Lütfen bir mesaj yazın.");
+            
+            // Hata Kontrolleri
+            if(finalPlate === "") {
+                alert("Lütfen bir plaka girin.");
+                document.getElementById('plateInput').focus();
+                return;
+            }
+            if(msg === "") {
+                alert("Lütfen göndermeden önce bir mesaj yazın.");
+                document.getElementById('messageInput').focus();
                 return;
             }
 
-            // Güvenlik: Kullanıcı HTML ile oynayıp maxlength'i aşarsa diye JavaScript tabanlı ikinci kesici
             if(msg.length > 100) {
                 msg = msg.substring(0, 100);
             }
 
             const btn = document.getElementById('sendBtn');
             btn.innerText = "GÖNDERİLİYOR...";
+            btn.style.background = "#0A84FF"; 
+            btn.style.color = "#fff";
             btn.disabled = true;
 
             try {
                 await addDoc(collection(db, "notifications"), {
-                    targetPlate: targetPlate.toUpperCase(),
+                    targetPlate: finalPlate,
                     message: msg,
                     senderId: auth.currentUser ? auth.currentUser.uid : "web_anonymous",
                     timestamp: serverTimestamp(),
                     isRead: false
                 });
                 
-                alert("Bildirim araç sahibine başarıyla iletildi!");
+                // Başarılı olursa UX değişiklikleri
+                btn.innerText = "BAŞARIYLA GÖNDERİLDİ ✓";
+                btn.style.background = "#32D74B"; 
+                
                 document.getElementById('messageInput').value = "";
                 window.updateCharCount();
-                btn.innerText = "BAŞARIYLA GÖNDERİLDİ";
+
+                // 3 saniye sonra butonu eski haline getir
+                setTimeout(() => {
+                    btn.innerText = "YENİ BİLDİRİM GÖNDER";
+                    btn.style.background = "#fff";
+                    btn.style.color = "#000";
+                    btn.disabled = false;
+                }, 3000);
+
             } catch(e) {
                 console.error("Hata:", e);
-                alert("Gönderilirken bir hata oluştu.");
-                btn.innerText = "BİLDİRİMİ GÖNDER";
+                alert("İnternet bağlantınızı kontrol edip tekrar deneyin.");
+                btn.innerText = "TEKRAR DENE";
+                btn.style.background = "#FF453A"; 
+                btn.style.color = "#fff";
                 btn.disabled = false;
             }
         }
