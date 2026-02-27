@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoSignal - Araç Sahibine Ulaş</title>
+    <style>
+        /* AutoSignal Karanlık Tema (Dark Mode) */
+        body { background-color: #000; color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-align: center; padding: 20px; margin: 0; }
+        .container { max-width: 500px; margin: 40px auto; padding: 20px; }
+        .logo { width: 120px; margin-bottom: 30px; border-radius: 20px;}
+        h2 { font-size: 22px; font-weight: 700; margin-bottom: 24px; color: #fff; }
+        
+        .plate-box { background: #1C1C1E; padding: 18px; border-radius: 16px; font-size: 28px; font-weight: 900; letter-spacing: 3px; margin-bottom: 24px; border: 1px solid #333; color: #fff; }
+        
+        /* AdSense Reklam Alanları */
+        .ad-banner { background: #18181B; border: 1px dashed #444; padding: 30px 10px; margin: 24px 0; color: #777; border-radius: 12px; font-size: 14px;}
+        
+        textarea { width: 100%; height: 120px; background: #1C1C1E; color: #fff; border: 1px solid #333; border-radius: 16px; padding: 16px; box-sizing: border-box; margin-bottom: 24px; font-size: 16px; resize: none; }
+        textarea:focus { outline: none; border-color: #0A84FF; }
+        
+        .btn-send { background: #fff; color: #000; font-weight: 800; width: 100%; padding: 18px; border: none; border-radius: 16px; font-size: 16px; cursor: pointer; transition: 0.2s; }
+        .btn-send:hover { background: #ddd; }
+        .btn-send:disabled { background: #555; color: #888; cursor: not-allowed; }
+        
+        .divider { height: 1px; background: #333; margin: 40px 0; }
+        
+        .store-title { font-size: 14px; color: #888; margin-bottom: 16px; }
+        .store-buttons { display: flex; justify-content: center; gap: 12px; }
+        .store-btn { background: #1C1C1E; color: white; padding: 14px 24px; border-radius: 12px; text-decoration: none; font-size: 14px; font-weight: 600; border: 1px solid #333; flex: 1; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="autosignallogo.png" alt="AutoSignal Logo" class="logo" onerror="this.style.display='none'">
+        
+        <h2>Sahibine Bildirim Gönder</h2>
+        
+        <div class="plate-box" id="plateDisplay">YÜKLENİYOR...</div>
+
+        <div class="ad-banner">
+            Google AdSense Reklam Alanı (Üst)
+        </div>
+
+        <textarea id="messageInput" placeholder="Mesajınızı buraya yazın... (Örn: Arabanızın farları açık kalmış)"></textarea>
+        <button class="btn-send" id="sendBtn" onclick="sendMessage()">BİLDİRİMİ GÖNDER</button>
+
+        <div class="ad-banner">
+            Google AdSense Reklam Alanı (Alt)
+        </div>
+
+        <div class="divider"></div>
+        
+        <div class="store-title">AutoSignal'i İndirin, Kendi Plakanızı Koruyun</div>
+        <div class="store-buttons">
+            <a href="#" class="store-btn">App Store</a>
+            <a href="#" class="store-btn">Google Play</a>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+        // DİKKAT: BURAYA KENDİ FIREBASE WEB CONFIG BİLGİLERİNİ GİRECEKSİN (Adım 2'de anlatıyorum)
+        const firebaseConfig = {
+            apiKey: "AIzaSyBk3c9DRwyBLC2QfrUA6fPxOTnyhom3au4",
+            authDomain: "autosignal-873cd.firebaseapp.com",
+            projectId: "autosignal-873cd",
+            storageBucket: "autosignal-873cd.firebasestorage.app",
+            messagingSenderId: "80739959987",
+            appId: "1:80739959987:web:2a7f8d499df948a3e69cc6"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        // URL'den plakayı yakalama (Örn: bixentadev.com/autosignal/?plate=34ABC123)
+        const urlParams = new URLSearchParams(window.location.search);
+        const targetPlate = urlParams.get('plate');
+
+        if(targetPlate) {
+            document.getElementById('plateDisplay').innerText = targetPlate.toUpperCase();
+        } else {
+            document.getElementById('plateDisplay').innerText = "GEÇERSİZ PLAKA";
+            document.getElementById('sendBtn').disabled = true;
+        }
+
+        // Web'den girenleri arka planda "Gizlice/Anonim" giriş yaptırırız ki veritabanımız güvende kalsın
+        signInAnonymously(auth).catch(error => console.error("Anonim Giriş Hatası:", error));
+
+        // Mesaj Gönderme Fonksiyonu
+        window.sendMessage = async function() {
+            const msg = document.getElementById('messageInput').value;
+            if(!targetPlate || msg.trim() === "") {
+                alert("Lütfen bir mesaj yazın.");
+                return;
+            }
+
+            const btn = document.getElementById('sendBtn');
+            btn.innerText = "GÖNDERİLİYOR...";
+            btn.disabled = true;
+
+            try {
+                // Uygulamadaki FirestoreService ile AYNI koleksiyona yazıyoruz!
+                await addDoc(collection(db, "notifications"), {
+                    targetPlate: targetPlate.toUpperCase(),
+                    message: msg,
+                    senderId: auth.currentUser ? auth.currentUser.uid : "web_anonymous",
+                    timestamp: serverTimestamp(),
+                    isRead: false
+                });
+                
+                alert("Bildirim araç sahibine başarıyla iletildi!");
+                document.getElementById('messageInput').value = "";
+                btn.innerText = "BAŞARIYLA GÖNDERİLDİ";
+            } catch(e) {
+                console.error("Hata:", e);
+                alert("Gönderilirken bir hata oluştu.");
+                btn.innerText = "BİLDİRİMİ GÖNDER";
+                btn.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>
