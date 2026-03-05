@@ -16,10 +16,7 @@
         .plate-input:focus { border-color: #0A84FF; background: #252528; box-shadow: 0 0 0 4px rgba(10, 132, 255, 0.15); }
         .plate-input::placeholder { color: #444; font-weight: 800; letter-spacing: 2px; }
         .plate-input:read-only { background: #151515; border-color: #0A84FF; color: #0A84FF; cursor: default; }
-        
-        /* AdSense Reklam Alanları */
-        .ad-banner { background: #18181B; border: 1px dashed #444; padding: 30px 10px; margin: 24px 0; color: #777; border-radius: 12px; font-size: 14px;}
-        
+                
         /* HAZIR ŞABLONLAR İÇİN TASARIM */
         .templates-container { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; justify-content: center; }
         .template-chip { background: #2C2C2E; color: #fff; border: 1px solid #444; padding: 12px 18px; border-radius: 24px; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s ease; }
@@ -53,8 +50,6 @@
         
         <input type="text" id="plateInput" class="plate-input" placeholder="34ABC123" maxlength="15" oninput="formatPlate(this)" autocomplete="off">
 
-        <div class="ad-banner">Google AdSense Reklam Alanı (Üst)</div>
-
         <div class="templates-container">
             <button class="template-chip" onclick="setTemplate('Hatalı park ettiniz, lütfen aracınızı çekin.')">Hatalı park</button>
             <button class="template-chip" onclick="setTemplate('Aracınızın camı açık kalmış.')">Cam açık</button>
@@ -67,8 +62,6 @@
         <div class="char-count" id="charCount">0/100</div>
 
         <button class="btn-send" id="sendBtn" onclick="sendMessage()">BİLDİRİMİ GÖNDER</button>
-
-        <div class="ad-banner">Google AdSense Reklam Alanı (Alt)</div>
 
         <div class="divider"></div>
         
