@@ -1,0 +1,97 @@
+AutoSignal - KVKK Aydınlatma Metni ve Gizlilik Politikası
+Son Güncelleme Tarihi: 06.03.2026
+
+AutoSignal ("Uygulama"), kullanıcıların araç sahiplerine anonim ve güvenli bir şekilde bildirim göndermesini sağlayan bir platformdur. BixentaDev ("Biz", "Şirket") olarak, kişisel verilerinizin güvenliğine ve gizliliğine en üst düzeyde önem veriyoruz.
+
+Bu sayfa, 6698 Sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamındaki Aydınlatma Metnimiz ile Google Play ve Apple App Store kurallarına tam uyumlu Gizlilik Politikamızı içermektedir.
+
+BÖLÜM 1: KVKK AYDINLATMA METNİ
+1. Veri Sorumlusu
+6698 sayılı KVKK uyarınca, kişisel verileriniz veri sorumlusu sıfatıyla BixentaDev (bixenta@bixentadev.com) tarafından aşağıda açıklanan amaçlar kapsamında toplanmakta ve işlenmektedir.
+
+2. İşlenen Kişisel Verileriniz ve Toplanma Yöntemi
+AutoSignal, veri minimizasyonu ilkesini benimser. Kullanıcılarımızdan isim, soyisim, açık adres, fotoğraf, ses kaydı veya kimlik numarası GEREKTİRMEZ ve TOPLAMAZ.
+
+Uygulamayı kullanma şeklinize göre yalnızca aşağıdaki veriler toplanır:
+
+Kayıtlı Kullanıcılar İçin (Plaka Sahipleri): Sisteme giriş yöntemine bağlı olarak E-posta adresi (Google/Apple ile giriş) veya Telefon Numarası (SMS ile giriş), Firebase Cloud Messaging (FCM) cihaz token'ı (bildirim gönderebilmek için) ve kaydettiğiniz araç plakası.
+
+Anonim Kullanıcılar İçin (Sadece Bildirim Gönderenler): Hesap açmadan bildirim gönderen kullanıcıların kişisel verileri toplanmaz. Yalnızca sistem güvenliği için standart ağ logları (IP adresi, cihaz türü) geçici olarak Firebase altyapısında barındırılır.
+
+VIP (Premium) Kullanıcılar İçin: Satın alma geçmişiniz (VIP durumu). Kredi kartı ve ödeme bilgileriniz tarafımızca görülmez ve saklanmaz; tüm ödeme işlemleri doğrudan Google Play Billing ve Apple In-App Purchase altyapıları üzerinden gerçekleşir.
+
+3. Kişisel Verilerin İşlenme Amaçları
+Toplanan verileriniz, KVKK’nın 5. ve 6. maddelerinde belirtilen şartlara uygun olarak şu amaçlarla işlenir:
+
+Araç plakanıza gelen bildirimleri (açık cam, hatalı park vb.) cihazınıza anlık olarak iletebilmek.
+
+Kullanıcı hesabı oluşturmak ve güvenli giriş (Authentication) süreçlerini yönetmek.
+
+VIP ayrıcalıklarının (ömür boyu kullanım, QR kod oluşturma) hesabınıza tanımlanmasını sağlamak.
+
+Kötüye kullanımı, spam bildirimleri engellemek ve sistem güvenliğini sağlamak.
+
+4. Kişisel Verilerin Aktarılması
+Verileriniz, ticari amaçlarla asla üçüncü şahıslara satılmaz. Yalnızca uygulamanın temel fonksiyonlarının çalışabilmesi için yurt dışında sunucuları bulunan güvenilir küresel hizmet sağlayıcılarına (Google LLC'ye ait Firebase Authentication ve Cloud Firestore) KVKK'nın 9. maddesine uygun olarak ve gerekli güvenlik tedbirleri alınarak aktarılmaktadır.
+
+5. İlgili Kişinin (Kullanıcının) Hakları
+KVKK'nın 11. maddesi uyarınca; verilerinizin işlenip işlenmediğini öğrenme, amacına uygun kullanılıp kullanılmadığını bilme, eksik/yanlış verilerin düzeltilmesini ve verilerinizin tamamen silinmesini talep etme hakkına sahipsiniz.
+
+Kullanıcılar, AutoSignal uygulaması içindeki "Hesabı Sil" butonunu kullanarak verilerini (plakalar, FCM token, profil bilgisi) veritabanımızdan kalıcı olarak ve anında silebilirler. Diğer talepleriniz için bixenta@bixentadev.com adresi üzerinden bizimle iletişime geçebilirsiniz.
+
+BÖLÜM 2: GİZLİLİK POLİTİKASI (PRIVACY POLICY)
+1. Uygulama İzinleri ve Kullanımı
+Bildirim İzni: Size aracınızla ilgili mesajları ulaştırabilmemiz için anlık bildirim (Push Notification) izni istenir. Bu izin reddedilebilir, ancak bu durumda aracınıza gelen mesajları cihaz ekranında göremezsiniz.
+
+Kamera İzni (Gelecek Özellikler): Sadece QR kod okutma işlemi sırasında cihazda anlık olarak kullanılır. Görüntüler sunucularımıza kaydedilmez.
+
+2. Anonimlik ve Şikayet Mekanizması
+AutoSignal üzerinden araç sahiplerine gönderilen bildirimlerde, göndericinin kimliği (e-posta veya telefon numarası) karşı tarafla asla paylaşılmaz. Ancak sistemin kötüye kullanılmasını (taciz, spam) engellemek amacıyla tüm mesajların meta verileri şifrelenmiş olarak tutulur. Kullanıcılar, uygulama içinden uygunsuz mesajları şikayet edebilir ve göndericiyi engelleyebilirler.
+
+3. Satın Alma ve VIP Paketler
+AutoSignal'de sunulan VIP ayrıcalıkları (QR Kod Paketi, Aile Paketi, Premium Paket) abonelik (subscription) değildir. Tek seferlik satın alma işlemiyle ömür boyu hesabınıza tanımlanır. Ödeme işlemleri tamamen Apple ve Google'ın kendi ödeme ağ geçitleri üzerinden yapılır, finansal verileriniz tarafımıza ulaşmaz.
+
+4. Veri Saklama ve Kalıcı Olarak Silme (Data Retention & Deletion)
+Google Play ve Apple App Store yönergelerine tam uyumlu olarak kullanıcılarımıza "kendi verilerini silme" konusunda tam kontrol sunuyoruz.
+
+Uygulamanın üst menüsünde yer alan "Hesabı Sil" seçeneğine tıkladığınızda, kaydettiğiniz tüm plakalar, profiliniz ve kimlik (Auth) bilgileriniz anında ve kalıcı olarak sunucularımızdan yok edilir.
+
+Güvenlik protokolleri gereği, hesabı silme işlemini yapabilmek için yakın zamanda oturum açmış olmanız gerekebilir.
+
+5. Çocukların Gizliliği
+Uygulamamız genel kitleye hitap etmekte olup, 13 yaşın altındaki çocuklardan bilerek kişisel veri toplamamaktayız. Eğer 13 yaşından küçük bir çocuğun bize veri sağladığını fark edersek, bu veriler derhal sistemlerimizden kalıcı olarak silinir.
+
+BÖLÜM 3: KULLANIM KOŞULLARI (TERMS OF USE)
+Uygulamamızı indirerek, erişerek veya kullanarak aşağıdaki şartları kabul etmiş sayılırsınız:
+
+1. Kabul Edilebilir Kullanım ve Yasaklar
+AutoSignal, günlük hayatta araç sahipleriyle pratik bir iletişim kurmak için tasarlanmıştır. Kullanıcılar uygulamayı kullanarak:
+
+Başka bir kullanıcıya hakaret, tehdit, taciz edici veya yasa dışı mesajlar gönderemez.
+
+Sahte veya kendisine ait olmayan plakaları manipülatif amaçlarla sisteme kaydedemez.
+
+Sistemi spam mesajlarla (sürekli ve gereksiz bildirim göndererek) meşgul edemez.
+
+BixentaDev, bu kuralları ihlal eden, şikayet edilen veya sistemi kötüye kullanan kullanıcıların cihazlarını ve hesaplarını kalıcı olarak sistemden engelleme hakkını saklı tutar.
+
+2. Sorumluluk Reddi (Disclaimer)
+AutoSignal, yalnızca bildirim gönderen ile araç sahibi arasında bir "iletim aracıdır".
+
+Uygulama üzerinden gönderilen mesajların doğruluğundan, içeriğinden veya taraflar arasında doğabilecek herhangi bir fiziksel/hukuki anlaşmazlıktan Şirketimiz sorumlu tutulamaz.
+
+Sistemimiz yüksek erişilebilirlik (uptime) ile çalışacak şekilde tasarlanmış olsa da, anlık bildirimlerin %100 iletileceği garantisi (cihaz ayarları, internet bağlantısı vb. sebeplerle) donanımsal olarak verilemez.
+
+3. Satın Almalar ve VIP Paketler
+AutoSignal'de sunulan VIP ayrıcalıkları (QR Kod Paketi, Aile Paketi, Premium Paket) abonelik (subscription) değildir. Tek seferlik satın alma işlemiyle hesabınıza ömür boyu tanımlanır. İade işlemleri BixentaDev tarafından değil, satın alımın yapıldığı platformun (Apple App Store veya Google Play Store) kendi iade politikaları çerçevesinde ilgili mağazalar tarafından gerçekleştirilir.
+
+4. İletişim
+Bu koşullar, politikalar veya uygulamanın kullanımı hakkında sorularınız için bizimle iletişime geçebilirsiniz:
+
+Geliştirici: BixentaDev
+
+E-posta: bixenta@bixentadev.com
+
+Politika Güncellemeleri
+
+Bu Gizlilik Politikası, KVKK Aydınlatma Metni ve Kullanım Koşulları, yeni özellikler veya yasal gereksinimler doğrultusunda güncellenebilir. Önemli bir değişiklik olması durumunda uygulama içi bir bildirim yoluyla bilgilendirileceksiniz.
