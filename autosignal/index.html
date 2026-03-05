@@ -167,7 +167,7 @@
                     targetPlate: finalPlate,
                     message: msg,
                     senderId: auth.currentUser ? auth.currentUser.uid : "web_anonymous",
-                    timestamp: serverTimestamp(),
+                    createdAt: serverTimestamp(),
                     isRead: false
                 });
                 
