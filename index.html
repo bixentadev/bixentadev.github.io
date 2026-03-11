@@ -1,597 +1,418 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BixentaDev | Geleceğin Mobil Deneyimlerini İnşa Ediyoruz</title>
-    <meta name="description" content="BixentaDev resmi geliştirici web sitesi. Yenilikçi, güvenli ve kullanıcı odaklı mobil uygulamalar.">
-    
-    <style>
-        /* --- TEMEL AYARLAR VE DEĞİŞKENLER --- */
-        :root {
-            --primary: #6366f1; /* İndigo / Sınav Notları Rengi */
-            --primary-hover: #4f46e5;
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --border: #e2e8f0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
+<title>BixentaDev | Mobile App Developer</title>
 
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
-        /* --- NAVBAR (ÜST MENÜ) --- */
-        header {
-            background-color: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-        }
+<style>
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+:root{
+--primary:#6366f1;
+--dark:#0f172a;
+--gray:#64748b;
+--bg:#0b1120;
+}
 
-        .logo {
-            font-size: 24px;
-            font-weight: 900;
-            color: var(--dark);
-            text-decoration: none;
-            letter-spacing: -1px;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter;
+}
 
-        .logo span { color: var(--primary); }
+body{
+background:linear-gradient(180deg,#0b1120,#020617);
+color:white;
+}
 
-        .nav-links a {
-            margin-left: 30px;
-            text-decoration: none;
-            color: var(--gray);
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
+/* NAVBAR */
 
-        .nav-links a:hover { color: var(--primary); }
+header{
+position:fixed;
+top:0;
+width:100%;
+backdrop-filter:blur(12px);
+background:rgba(15,23,42,0.5);
+border-bottom:1px solid rgba(255,255,255,0.08);
+z-index:1000;
+}
 
-        /* --- HERO BÖLÜMÜ (KARŞILAMA) --- */
-        .hero {
-            padding: 150px 20px 100px;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+.nav{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+}
 
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 800;
-            line-height: 1.2;
-            letter-spacing: -1.5px;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
+.logo{
+font-weight:900;
+font-size:22px;
+letter-spacing:-0.5px;
+}
 
-        .hero p {
-            font-size: 20px;
-            color: var(--gray);
-            margin-bottom: 40px;
-        }
+.logo span{
+color:var(--primary);
+}
 
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
-        }
+.nav a{
+color:#cbd5f5;
+text-decoration:none;
+margin-left:25px;
+font-weight:500;
+transition:.3s;
+}
 
-        .btn:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
-        }
+.nav a:hover{
+color:white;
+}
 
-        /* --- UYGULAMALAR PORTFÖYÜ --- */
-        .portfolio {
-            max-width: 1200px;
-            margin: 0 auto 100px;
-            padding: 0 20px;
-        }
+/* HERO */
 
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 50px;
-            letter-spacing: -0.5px;
-        }
+.hero{
+max-width:1200px;
+margin:auto;
+padding:160px 20px 120px 20px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
 
-        .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+.hero h1{
+font-size:54px;
+line-height:1.1;
+font-weight:900;
+letter-spacing:-2px;
+margin-bottom:20px;
+}
 
-        .app-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px 30px;
-            border: 1px solid var(--border);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
+.hero p{
+font-size:20px;
+color:#94a3b8;
+margin-bottom:40px;
+}
 
-        .app-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            border-color: var(--primary);
-        }
+.btn{
+display:inline-block;
+padding:14px 28px;
+background:linear-gradient(135deg,#6366f1,#4f46e5);
+border-radius:12px;
+text-decoration:none;
+color:white;
+font-weight:600;
+box-shadow:0 15px 30px rgba(99,102,241,0.3);
+transition:.3s;
+}
 
-        .app-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--light);
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            margin-bottom: 24px;
-            color: var(--primary);
-        }
+.btn:hover{
+transform:translateY(-3px);
+}
 
-        .app-card h3 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
+/* HERO CARD */
 
-        .app-card p {
-            color: var(--gray);
-            font-size: 15px;
-            margin-bottom: 24px;
-        }
+.hero-card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
+padding:40px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+}
 
-        .tag {
-            display: inline-block;
-            background: #eef2ff;
-            color: var(--primary);
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-right: 8px;
-            margin-bottom: 8px;
-        }
+.hero-card h3{
+margin-bottom:15px;
+}
 
-        /* --- FOOTER --- */
-        footer {
-            background-color: white;
-            border-top: 1px solid var(--border);
-            padding: 60px 20px;
-            text-align: center;
-        }
+.stat{
+display:flex;
+justify-content:space-between;
+margin-top:20px;
+font-size:15px;
+color:#cbd5f5;
+}
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+/* SECTION */
 
-        .footer-links a {
-            color: var(--gray);
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 14px;
-        }
+section{
+max-width:1200px;
+margin:auto;
+padding:100px 20px;
+}
 
-        .footer-links a:hover { color: var(--primary); }
-        
-        .copyright { color: var(--gray); font-size: 14px; }
+.section-title{
+font-size:36px;
+font-weight:800;
+margin-bottom:50px;
+text-align:center;
+}
 
-        /* Mobil Uyum */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 36px; }
-            .hero p { font-size: 18px; }
-            .nav-links { display: none; } /* Mobilde menüyü gizle, sade dursun */
-            .footer-content { flex-direction: column; text-align: center; }
-        }
-    </style>
+/* APPS */
+
+.apps{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.app{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
+padding:30px;
+border-radius:18px;
+transition:.3s;
+}
+
+.app:hover{
+transform:translateY(-8px);
+border-color:var(--primary);
+}
+
+.app-icon{
+font-size:32px;
+margin-bottom:15px;
+}
+
+.app h3{
+margin-bottom:10px;
+}
+
+.app p{
+color:#94a3b8;
+font-size:15px;
+margin-bottom:15px;
+}
+
+.tag{
+display:inline-block;
+background:rgba(99,102,241,0.15);
+color:#a5b4fc;
+padding:6px 10px;
+border-radius:8px;
+font-size:12px;
+margin-right:6px;
+margin-bottom:6px;
+}
+
+/* ABOUT */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.about p{
+color:#94a3b8;
+font-size:18px;
+line-height:1.7;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:60px 20px;
+border-top:1px solid rgba(255,255,255,0.08);
+color:#64748b;
+font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero{
+grid-template-columns:1fr;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.nav-links{
+display:none;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
-    <header>
-        <div class="nav-container">
-            <a href="#" class="logo">Bixenta<span>Dev</span></a>
-            <div class="nav-links">
-                <a href="#apps">Uygulamalarımız</a>
-                <a href="#about">Hakkımızda</a>
-                <a href="mailto:bixenta@bixentadev.com">İletişim</a>
-            </div>
-        </div>
-    </header>
+<header>
+<div class="nav">
 
-    <section class="hero">
-        <h1>Gündelik Sorunlara,<br>Gelişmiş Mobil Çözümler.</h1>
-        <p>Eğitimden güvenli iletişime kadar, kullanıcı odaklı, temiz arayüzlü ve yüksek güvenlikli iOS ve Android uygulamaları geliştiriyoruz.</p>
-        <a href="#apps" class="btn">Projeleri İncele</a>
-    </section>
+<div class="logo">Bixenta<span>Dev</span></div>
 
-    <section id="apps" class="portfolio">
-        <h2 class="section-title">Uygulama Ekosistemimiz</h2>
-        
-        <div class="apps-grid">
-            
-            <div class="app-card">
-                <div class="app-icon">📚</div>
-                <h3>Sınav Notları</h3>
-                <p>Üniversite öğrencileri için tasarlanmış akademik not paylaşım ve pazar yeri uygulaması. Sınırsız kütüphane ve gelir modeli.</p>
-                <div class="tags">
-                    <span class="tag">Eğitim</span>
-                    <span class="tag">Yapay Zeka</span>
-                    <span class="tag">Pazar Yeri</span>
-                </div>
-            </div>
+<div class="nav-links">
+<a href="#apps">Projeler</a>
+<a href="#about">Hakkımda</a>
+<a href="mailto:bixenta@bixentadev.com">İletişim</a>
+</div>
 
-            <div class="app-card">
-                <div class="app-icon">💬</div>
-                <h3>CloseApp</h3>
-                <p>Çevrendekilerle tanışmanızı ve sohbet etmenizi sağlayan GPS tabanlı bir mesajlaşma platformu.</p>
-                <div class="tags">
-                    <span class="tag">Sosyal</span>
-                    <span class="tag">Mesajlaşma</span>
-                    <span class="tag">Güvenlik</span>
-                </div>
-            </div>
+</div>
+</header>
 
-            <div class="app-card">
-                <div class="app-icon">🚗</div>
-                <h3>AutoSignal</h3>
-                <p>Park sorunları veya acil durumlar için araç sahiplerine telefon numarası paylaşmadan, tamamen anonim olarak plaka üzerinden ulaşmanızı sağlayan inovatif araç.</p>
-                <div class="tags">
-                    <span class="tag">Araç & Ulaşım</span>
-                    <span class="tag">Anonimite</span>
-                    <span class="tag">Fayda</span>
-                </div>
-            </div>
 
-        </div>
-    </section>
+<section class="hero">
 
-    <footer>
-        <div class="footer-content">
-            <div class="copyright">
-                &copy; 2026 BixentaDev. Tüm hakları saklıdır.
-            </div>
-            <div class="footer-links">
-                <a href="/sinavnotlari/policies">Sınav Notları Gizlilik ve Şartlar</a>
-                <a href="mailto:bixenta@bixentadev.com">Destek: bixenta@bixentadev.com</a>
-            </div>
-        </div>
-    </footer>
+<div>
 
-</body>
-</html><!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BixentaDev | Geleceğin Mobil Deneyimlerini İnşa Ediyoruz</title>
-    <meta name="description" content="BixentaDev resmi geliştirici web sitesi. Yenilikçi, güvenli ve kullanıcı odaklı mobil uygulamalar.">
-    
-    <style>
-        /* --- TEMEL AYARLAR VE DEĞİŞKENLER --- */
-        :root {
-            --primary: #6366f1; /* İndigo / Sınav Notları Rengi */
-            --primary-hover: #4f46e5;
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --border: #e2e8f0;
-        }
+<h1>Modern Mobil<br>Uygulamalar<br>Geliştiriyorum</h1>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
+<p>
+Kullanıcı odaklı, güvenli ve modern mobil uygulamalar geliştiriyorum.
+Flutter, Firebase ve modern mobil teknolojiler ile gerçek problemleri çözen ürünler inşa ediyorum.
+</p>
 
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
+<a href="#apps" class="btn">Projelerimi Gör</a>
 
-        /* --- NAVBAR (ÜST MENÜ) --- */
-        header {
-            background-color: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-        }
+</div>
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 900;
-            color: var(--dark);
-            text-decoration: none;
-            letter-spacing: -1px;
-        }
+<div class="hero-card">
 
-        .logo span { color: var(--primary); }
+<h3>Developer Profile</h3>
 
-        .nav-links a {
-            margin-left: 30px;
-            text-decoration: none;
-            color: var(--gray);
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
+<p style="color:#94a3b8;">
+Bağımsız mobil uygulama geliştiricisi.
+Gerçek kullanıcı problemlerine çözüm üreten ürünler geliştiriyorum.
+</p>
 
-        .nav-links a:hover { color: var(--primary); }
+<div class="stat">
+<span>Platform</span>
+<span>iOS / Android</span>
+</div>
 
-        /* --- HERO BÖLÜMÜ (KARŞILAMA) --- */
-        .hero {
-            padding: 150px 20px 100px;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+<div class="stat">
+<span>Teknoloji</span>
+<span>Flutter / Firebase</span>
+</div>
 
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 800;
-            line-height: 1.2;
-            letter-spacing: -1.5px;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
+<div class="stat">
+<span>Odak</span>
+<span>Startup Apps</span>
+</div>
 
-        .hero p {
-            font-size: 20px;
-            color: var(--gray);
-            margin-bottom: 40px;
-        }
+</div>
 
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
-        }
+</section>
 
-        .btn:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
-        }
 
-        /* --- UYGULAMALAR PORTFÖYÜ --- */
-        .portfolio {
-            max-width: 1200px;
-            margin: 0 auto 100px;
-            padding: 0 20px;
-        }
 
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 50px;
-            letter-spacing: -0.5px;
-        }
+<section id="apps">
 
-        .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+<h2 class="section-title">Projeler</h2>
 
-        .app-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px 30px;
-            border: 1px solid var(--border);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
+<div class="apps">
 
-        .app-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            border-color: var(--primary);
-        }
+<div class="app">
+<div class="app-icon">📚</div>
+<h3>Sınav Notları</h3>
+<p>
+Üniversite öğrencileri için not paylaşım ve akademik içerik pazaryeri platformu.
+</p>
 
-        .app-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--light);
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            margin-bottom: 24px;
-            color: var(--primary);
-        }
+<span class="tag">Education</span>
+<span class="tag">Marketplace</span>
+<span class="tag">AI</span>
 
-        .app-card h3 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
+</div>
 
-        .app-card p {
-            color: var(--gray);
-            font-size: 15px;
-            margin-bottom: 24px;
-        }
 
-        .tag {
-            display: inline-block;
-            background: #eef2ff;
-            color: var(--primary);
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-right: 8px;
-            margin-bottom: 8px;
-        }
+<div class="app">
 
-        /* --- FOOTER --- */
-        footer {
-            background-color: white;
-            border-top: 1px solid var(--border);
-            padding: 60px 20px;
-            text-align: center;
-        }
+<div class="app-icon">💬</div>
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+<h3>CloseApp</h3>
 
-        .footer-links a {
-            color: var(--gray);
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 14px;
-        }
+<p>
+Konum tabanlı sosyal keşif ve mesajlaşma platformu.
+Yakındaki insanlarla güvenli şekilde iletişim kurmayı sağlar.
+</p>
 
-        .footer-links a:hover { color: var(--primary); }
-        
-        .copyright { color: var(--gray); font-size: 14px; }
+<span class="tag">Social</span>
+<span class="tag">Location</span>
+<span class="tag">Chat</span>
 
-        /* Mobil Uyum */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 36px; }
-            .hero p { font-size: 18px; }
-            .nav-links { display: none; } /* Mobilde menüyü gizle, sade dursun */
-            .footer-content { flex-direction: column; text-align: center; }
-        }
-    </style>
-</head>
-<body>
+</div>
 
-    <header>
-        <div class="nav-container">
-            <a href="#" class="logo">Bixenta<span>Dev</span></a>
-            <div class="nav-links">
-                <a href="#apps">Uygulamalarımız</a>
-                <a href="#about">Hakkımızda</a>
-                <a href="mailto:bixenta@bixentadev.com">İletişim</a>
-            </div>
-        </div>
-    </header>
 
-    <section class="hero">
-        <h1>Gündelik Sorunlara,<br>Gelişmiş Mobil Çözümler.</h1>
-        <p>Eğitimden güvenli iletişime kadar, kullanıcı odaklı, temiz arayüzlü ve yüksek güvenlikli iOS ve Android uygulamaları geliştiriyoruz.</p>
-        <a href="#apps" class="btn">Projeleri İncele</a>
-    </section>
+<div class="app">
 
-    <section id="apps" class="portfolio">
-        <h2 class="section-title">Uygulama Ekosistemimiz</h2>
-        
-        <div class="apps-grid">
-            
-            <div class="app-card">
-                <div class="app-icon">📚</div>
-                <h3>Sınav Notları</h3>
-                <p>Üniversite öğrencileri için tasarlanmış akademik not paylaşım ve pazar yeri uygulaması. Sınırsız kütüphane ve gelir modeli.</p>
-                <div class="tags">
-                    <span class="tag">Eğitim</span>
-                    <span class="tag">Yapay Zeka</span>
-                    <span class="tag">Pazar Yeri</span>
-                </div>
-            </div>
+<div class="app-icon">🚗</div>
 
-            <div class="app-card">
-                <div class="app-icon">💬</div>
-                <h3>CloseApp</h3>
-                <p>Çevrendekilerle tanışmanızı ve sohbet etmenizi sağlayan GPS tabanlı bir mesajlaşma platformu.</p>
-                <div class="tags">
-                    <span class="tag">Sosyal</span>
-                    <span class="tag">Mesajlaşma</span>
-                    <span class="tag">Güvenlik</span>
-                </div>
-            </div>
+<h3>AutoSignal</h3>
 
-            <div class="app-card">
-                <div class="app-icon">🚗</div>
-                <h3>AutoSignal</h3>
-                <p>Park sorunları veya acil durumlar için araç sahiplerine telefon numarası paylaşmadan, tamamen anonim olarak plaka üzerinden ulaşmanızı sağlayan inovatif araç.</p>
-                <div class="tags">
-                    <span class="tag">Araç & Ulaşım</span>
-                    <span class="tag">Anonimite</span>
-                    <span class="tag">Fayda</span>
-                </div>
-            </div>
+<p>
+Araç sahiplerine plaka üzerinden anonim mesaj gönderilmesini sağlayan mobil çözüm.
+</p>
 
-        </div>
-    </section>
+<span class="tag">Utility</span>
+<span class="tag">Mobility</span>
+<span class="tag">Privacy</span>
 
-    <footer>
-        <div class="footer-content">
-            <div class="copyright">
-                &copy; 2026 BixentaDev. Tüm hakları saklıdır.
-            </div>
-            <div class="footer-links">
-                <a href="/sinavnotlari/policies">Sınav Notları Gizlilik ve Şartlar</a>
-                <a href="mailto:bixenta@bixentadev.com">Destek: bixenta@bixentadev.com</a>
-            </div>
-        </div>
-    </footer>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="about">
+
+<h2 class="section-title">Hakkımda</h2>
+
+<div class="about">
+
+<p>
+
+Ben bağımsız bir mobil uygulama geliştiricisiyim.  
+Amacım gerçek hayattaki problemleri çözen mobil ürünler geliştirmek.
+
+Projelerimde sade kullanıcı deneyimi, güvenlik ve performans önceliklidir.
+
+Flutter ve Firebase kullanarak iOS ve Android platformları için ölçeklenebilir uygulamalar geliştiriyorum.
+
+</p>
+
+<p>
+
+Ürettiğim uygulamalar:
+
+• eğitim  
+• sosyal keşif  
+• anonim iletişim  
+• günlük hayat çözümleri  
+
+gibi alanlara odaklanır.
+
+Amacım faydalı, sürdürülebilir ve kullanıcı odaklı dijital ürünler oluşturmaktır.
+
+</p>
+
+</div>
+
+</section>
+
+
+<footer>
+
+© 2026 BixentaDev  
+bixenta@bixentadev.com
+
+</footer>
 
 </body>
 </html>
