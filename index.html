@@ -7,9 +7,11 @@
 
 <title>BixentaDev | Mobile App Developer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 
 <style>
+
+/* ---------- RESET ---------- */
 
 *{
 margin:0;
@@ -23,19 +25,19 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#050816;
+background:#0b0b0f;
 color:white;
 overflow-x:hidden;
 }
 
-/* NAVBAR */
+/* ---------- NAVBAR ---------- */
 
 header{
 position:fixed;
 top:0;
 width:100%;
 backdrop-filter:blur(20px);
-background:rgba(10,12,30,0.6);
+background:rgba(10,10,15,0.7);
 border-bottom:1px solid rgba(255,255,255,0.06);
 z-index:1000;
 }
@@ -43,150 +45,147 @@ z-index:1000;
 .nav{
 max-width:1200px;
 margin:auto;
-padding:20px;
+padding:18px 20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 }
 
 .logo{
-font-weight:900;
-font-size:22px;
+font-weight:800;
+font-size:20px;
+letter-spacing:-0.3px;
 }
 
 .logo span{
 color:#7c83ff;
 }
 
-.nav a{
-color:#cbd5f5;
+.nav-links a{
+color:#a1a1aa;
 text-decoration:none;
 margin-left:25px;
-font-weight:500;
+font-size:14px;
 }
 
-.nav a:hover{
+.nav-links a:hover{
 color:white;
 }
 
-/* HERO */
+/* ---------- HERO ---------- */
 
 .hero{
 min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-padding:120px 20px;
+text-align:center;
+padding:160px 20px 120px;
 position:relative;
 }
 
-.hero-container{
-max-width:1200px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:80px;
-align-items:center;
-}
-
 .hero h1{
-font-size:64px;
-line-height:1.05;
+font-size:72px;
 font-weight:900;
+letter-spacing:-3px;
+line-height:1.05;
 margin-bottom:25px;
-letter-spacing:-2px;
 }
 
 .hero p{
-font-size:20px;
-color:#94a3b8;
+font-size:22px;
+color:#a1a1aa;
+max-width:720px;
+margin:auto;
 margin-bottom:40px;
-max-width:520px;
 }
 
 .btn{
 display:inline-block;
-padding:15px 30px;
-border-radius:12px;
+padding:14px 30px;
+border-radius:999px;
 background:linear-gradient(135deg,#6366f1,#4f46e5);
 color:white;
-text-decoration:none;
 font-weight:600;
-box-shadow:0 20px 40px rgba(99,102,241,0.4);
+text-decoration:none;
+box-shadow:0 15px 40px rgba(99,102,241,0.35);
 transition:0.3s;
 }
 
 .btn:hover{
-transform:translateY(-4px);
+transform:translateY(-3px);
 }
 
-/* FLOATING LIGHTS */
+/* ---------- MESH GRADIENT ---------- */
 
-.light{
+.mesh{
 position:absolute;
-width:500px;
-height:500px;
-background:radial-gradient(circle,#6366f1aa,transparent 60%);
+width:700px;
+height:700px;
+background:radial-gradient(circle,#6366f140,transparent 70%);
 filter:blur(120px);
+z-index:-1;
 }
 
-.light1{
-top:-100px;
+.mesh1{
+top:-200px;
 left:-200px;
 }
 
-.light2{
-bottom:-200px;
+.mesh2{
+bottom:-250px;
 right:-200px;
 }
 
-/* IPHONE MOCKUP */
-
-.phone{
-width:300px;
-height:600px;
-background:#000;
-border-radius:45px;
-padding:12px;
-box-shadow:
-0 50px 120px rgba(0,0,0,0.7),
-0 0 0 8px #1f2937;
-transform:rotateY(-20deg) rotateX(5deg);
-transition:1s;
-}
-
-.phone:hover{
-transform:rotateY(-10deg) rotateX(0deg);
-}
-
-.screen{
-width:100%;
-height:100%;
-border-radius:35px;
-background:linear-gradient(180deg,#6366f1,#1e293b);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:28px;
-font-weight:700;
-}
-
-/* SECTION */
+/* ---------- SECTIONS ---------- */
 
 section{
-max-width:1200px;
+max-width:1100px;
 margin:auto;
 padding:120px 20px;
 }
 
-.title{
-font-size:40px;
+.section-title{
+font-size:42px;
 font-weight:900;
 text-align:center;
-margin-bottom:70px;
+margin-bottom:60px;
 letter-spacing:-1px;
 }
 
-/* PROJECTS */
+/* ---------- FEATURE GRID ---------- */
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+}
+
+.feature{
+padding:30px;
+border-radius:18px;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.06);
+transition:0.4s;
+}
+
+.feature:hover{
+transform:translateY(-8px);
+border-color:#6366f1;
+}
+
+.feature h3{
+margin-bottom:10px;
+font-size:20px;
+}
+
+.feature p{
+color:#9ca3af;
+font-size:15px;
+line-height:1.6;
+}
+
+/* ---------- PROJECTS ---------- */
 
 .projects{
 display:grid;
@@ -194,70 +193,64 @@ grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:35px;
 }
 
-.card{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.08);
+.project{
 padding:35px;
 border-radius:20px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.06);
 transition:.4s;
-backdrop-filter:blur(20px);
 }
 
-.card:hover{
+.project:hover{
 transform:translateY(-10px);
 border-color:#6366f1;
-box-shadow:0 20px 60px rgba(0,0,0,0.6);
 }
 
-.card-icon{
-font-size:32px;
-margin-bottom:15px;
-}
-
-.card h3{
+.project h3{
 margin-bottom:10px;
 }
 
-.card p{
-color:#94a3b8;
-font-size:15px;
+.project p{
+color:#9ca3af;
 margin-bottom:15px;
+font-size:15px;
 }
 
 .tag{
 display:inline-block;
-background:#6366f122;
-color:#a5b4fc;
 padding:6px 10px;
+background:#6366f120;
+color:#a5b4fc;
 border-radius:8px;
 font-size:12px;
 margin-right:6px;
 }
 
-/* ABOUT */
+/* ---------- ABOUT ---------- */
 
 .about{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:70px;
+gap:60px;
 }
 
 .about p{
 font-size:18px;
 line-height:1.8;
-color:#94a3b8;
+color:#a1a1aa;
 }
 
-/* FOOTER */
+/* ---------- FOOTER ---------- */
 
 footer{
 text-align:center;
 padding:80px 20px;
 border-top:1px solid rgba(255,255,255,0.08);
-color:#64748b;
+color:#6b7280;
+font-size:14px;
 }
 
-/* SCROLL ANIMATION */
+/* ---------- SCROLL REVEAL ---------- */
 
 .reveal{
 opacity:0;
@@ -270,25 +263,16 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* MOBILE */
+/* ---------- MOBILE ---------- */
 
 @media(max-width:900px){
 
-.hero-container{
-grid-template-columns:1fr;
-text-align:center;
-}
-
 .hero h1{
-font-size:44px;
+font-size:48px;
 }
 
 .about{
 grid-template-columns:1fr;
-}
-
-.phone{
-margin:auto;
 }
 
 }
@@ -299,53 +283,75 @@ margin:auto;
 <body>
 
 <header>
+
 <div class="nav">
+
 <div class="logo">Bixenta<span>Dev</span></div>
 
-<div>
+<div class="nav-links">
 <a href="#projects">Projeler</a>
 <a href="#about">Hakkımda</a>
 <a href="mailto:bixenta@bixentadev.com">İletişim</a>
 </div>
 
 </div>
+
 </header>
 
-<div class="light light1"></div>
-<div class="light light2"></div>
+<div class="mesh mesh1"></div>
+<div class="mesh mesh2"></div>
 
 <section class="hero">
-
-<div class="hero-container">
 
 <div>
 
 <h1>
-Modern<br>
-Mobil Ürünler<br>
-Geliştiriyorum
+Modern Mobil<br>
+Ürünler İnşa Ediyorum
 </h1>
 
 <p>
 
 Flutter ve modern backend teknolojileri kullanarak
-gerçek problemlere çözüm üreten mobil uygulamalar
-geliştiriyorum.
+gerçek dünyadaki problemleri çözen
+ölçeklenebilir mobil uygulamalar geliştiriyorum.
 
 </p>
 
 <a href="#projects" class="btn">
-Projeleri İncele
+Projeleri Gör
 </a>
 
 </div>
 
-<div class="phone">
+</section>
 
-<div class="screen">
-App Preview
+
+<section class="reveal">
+
+<h2 class="section-title">Yaklaşımım</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>Minimal Tasarım</h3>
+<p>
+Basit, temiz ve kullanıcı odaklı arayüzler oluştururum.
+</p>
 </div>
 
+<div class="feature">
+<h3>Yüksek Performans</h3>
+<p>
+Hızlı ve ölçeklenebilir mobil mimariler geliştiririm.
+</p>
+</div>
+
+<div class="feature">
+<h3>Gerçek Problemler</h3>
+<p>
+Uygulamalarım gerçek kullanıcı ihtiyaçlarına odaklanır.
+</p>
 </div>
 
 </div>
@@ -355,40 +361,52 @@ App Preview
 
 <section id="projects" class="reveal">
 
-<h2 class="title">Projeler</h2>
+<h2 class="section-title">Projeler</h2>
 
 <div class="projects">
 
-<div class="card">
-<div class="card-icon">📚</div>
+<div class="project">
+
 <h3>Sınav Notları</h3>
-<p>Üniversite öğrencileri için not paylaşım ve akademik içerik pazaryeri.</p>
+
+<p>
+Üniversite öğrencileri için not paylaşımı ve akademik içerik pazaryeri.
+</p>
 
 <span class="tag">Education</span>
 <span class="tag">Marketplace</span>
 <span class="tag">AI</span>
+
 </div>
 
 
-<div class="card">
-<div class="card-icon">💬</div>
+<div class="project">
+
 <h3>CloseApp</h3>
-<p>Konum tabanlı sosyal keşif ve mesajlaşma platformu.</p>
+
+<p>
+Konum tabanlı sosyal keşif ve mesajlaşma platformu.
+</p>
 
 <span class="tag">Social</span>
 <span class="tag">Location</span>
 <span class="tag">Chat</span>
+
 </div>
 
 
-<div class="card">
-<div class="card-icon">🚗</div>
+<div class="project">
+
 <h3>AutoSignal</h3>
-<p>Plaka üzerinden anonim iletişim sağlayan mobil çözüm.</p>
+
+<p>
+Plaka üzerinden anonim iletişim sağlayan mobil çözüm.
+</p>
 
 <span class="tag">Utility</span>
 <span class="tag">Privacy</span>
 <span class="tag">Mobility</span>
+
 </div>
 
 </div>
@@ -398,7 +416,7 @@ App Preview
 
 <section id="about" class="reveal">
 
-<h2 class="title">Hakkımda</h2>
+<h2 class="section-title">Hakkımda</h2>
 
 <div class="about">
 
@@ -407,7 +425,7 @@ App Preview
 Bağımsız bir mobil uygulama geliştiricisiyim.
 
 Gerçek dünyadaki problemleri çözmeye odaklanan
-ürünler geliştiriyorum.
+ürünler geliştirmeyi seviyorum.
 
 Kullanıcı deneyimi, güvenlik ve performans
 projelerimin merkezinde yer alır.
@@ -421,7 +439,7 @@ iOS ve Android için ölçeklenebilir
 mobil ürünler geliştiriyorum.
 
 Amacım sürdürülebilir ve faydalı
-dijital ürünler oluşturmak.
+dijital ürünler oluşturmaktır.
 
 </p>
 
@@ -440,11 +458,11 @@ bixenta@bixentadev.com
 
 <script>
 
-const reveals = document.querySelectorAll(".reveal");
+const revealElements = document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll", () => {
 
-reveals.forEach(el => {
+revealElements.forEach(el => {
 
 const top = el.getBoundingClientRect().top;
 
