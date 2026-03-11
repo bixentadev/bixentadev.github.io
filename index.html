@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -10,13 +11,6 @@
 
 <style>
 
-:root{
---primary:#6366f1;
---dark:#0f172a;
---gray:#64748b;
---bg:#0b1120;
-}
-
 *{
 margin:0;
 padding:0;
@@ -24,9 +18,14 @@ box-sizing:border-box;
 font-family:Inter;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
-background:linear-gradient(180deg,#0b1120,#020617);
+background:#050816;
 color:white;
+overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -35,29 +34,28 @@ header{
 position:fixed;
 top:0;
 width:100%;
-backdrop-filter:blur(12px);
-background:rgba(15,23,42,0.5);
-border-bottom:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+background:rgba(10,12,30,0.6);
+border-bottom:1px solid rgba(255,255,255,0.06);
 z-index:1000;
 }
 
 .nav{
 max-width:1200px;
 margin:auto;
+padding:20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px;
 }
 
 .logo{
 font-weight:900;
 font-size:22px;
-letter-spacing:-0.5px;
 }
 
 .logo span{
-color:var(--primary);
+color:#7c83ff;
 }
 
 .nav a{
@@ -65,7 +63,6 @@ color:#cbd5f5;
 text-decoration:none;
 margin-left:25px;
 font-weight:500;
-transition:.3s;
 }
 
 .nav a:hover{
@@ -75,65 +72,102 @@ color:white;
 /* HERO */
 
 .hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:120px 20px;
+position:relative;
+}
+
+.hero-container{
 max-width:1200px;
-margin:auto;
-padding:160px 20px 120px 20px;
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:60px;
+gap:80px;
 align-items:center;
 }
 
 .hero h1{
-font-size:54px;
-line-height:1.1;
+font-size:64px;
+line-height:1.05;
 font-weight:900;
+margin-bottom:25px;
 letter-spacing:-2px;
-margin-bottom:20px;
 }
 
 .hero p{
 font-size:20px;
 color:#94a3b8;
 margin-bottom:40px;
+max-width:520px;
 }
 
 .btn{
 display:inline-block;
-padding:14px 28px;
-background:linear-gradient(135deg,#6366f1,#4f46e5);
+padding:15px 30px;
 border-radius:12px;
-text-decoration:none;
+background:linear-gradient(135deg,#6366f1,#4f46e5);
 color:white;
+text-decoration:none;
 font-weight:600;
-box-shadow:0 15px 30px rgba(99,102,241,0.3);
-transition:.3s;
+box-shadow:0 20px 40px rgba(99,102,241,0.4);
+transition:0.3s;
 }
 
 .btn:hover{
-transform:translateY(-3px);
+transform:translateY(-4px);
 }
 
-/* HERO CARD */
+/* FLOATING LIGHTS */
 
-.hero-card{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.08);
-padding:40px;
-border-radius:20px;
-backdrop-filter:blur(10px);
+.light{
+position:absolute;
+width:500px;
+height:500px;
+background:radial-gradient(circle,#6366f1aa,transparent 60%);
+filter:blur(120px);
 }
 
-.hero-card h3{
-margin-bottom:15px;
+.light1{
+top:-100px;
+left:-200px;
 }
 
-.stat{
+.light2{
+bottom:-200px;
+right:-200px;
+}
+
+/* IPHONE MOCKUP */
+
+.phone{
+width:300px;
+height:600px;
+background:#000;
+border-radius:45px;
+padding:12px;
+box-shadow:
+0 50px 120px rgba(0,0,0,0.7),
+0 0 0 8px #1f2937;
+transform:rotateY(-20deg) rotateX(5deg);
+transition:1s;
+}
+
+.phone:hover{
+transform:rotateY(-10deg) rotateX(0deg);
+}
+
+.screen{
+width:100%;
+height:100%;
+border-radius:35px;
+background:linear-gradient(180deg,#6366f1,#1e293b);
 display:flex;
-justify-content:space-between;
-margin-top:20px;
-font-size:15px;
-color:#cbd5f5;
+align-items:center;
+justify-content:center;
+font-size:28px;
+font-weight:700;
 }
 
 /* SECTION */
@@ -141,47 +175,50 @@ color:#cbd5f5;
 section{
 max-width:1200px;
 margin:auto;
-padding:100px 20px;
+padding:120px 20px;
 }
 
-.section-title{
-font-size:36px;
-font-weight:800;
-margin-bottom:50px;
+.title{
+font-size:40px;
+font-weight:900;
 text-align:center;
+margin-bottom:70px;
+letter-spacing:-1px;
 }
 
-/* APPS */
+/* PROJECTS */
 
-.apps{
+.projects{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
+gap:35px;
 }
 
-.app{
+.card{
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.08);
-padding:30px;
-border-radius:18px;
-transition:.3s;
+padding:35px;
+border-radius:20px;
+transition:.4s;
+backdrop-filter:blur(20px);
 }
 
-.app:hover{
-transform:translateY(-8px);
-border-color:var(--primary);
+.card:hover{
+transform:translateY(-10px);
+border-color:#6366f1;
+box-shadow:0 20px 60px rgba(0,0,0,0.6);
 }
 
-.app-icon{
+.card-icon{
 font-size:32px;
 margin-bottom:15px;
 }
 
-.app h3{
+.card h3{
 margin-bottom:10px;
 }
 
-.app p{
+.card p{
 color:#94a3b8;
 font-size:15px;
 margin-bottom:15px;
@@ -189,13 +226,12 @@ margin-bottom:15px;
 
 .tag{
 display:inline-block;
-background:rgba(99,102,241,0.15);
+background:#6366f122;
 color:#a5b4fc;
 padding:6px 10px;
 border-radius:8px;
 font-size:12px;
 margin-right:6px;
-margin-bottom:6px;
 }
 
 /* ABOUT */
@@ -203,44 +239,56 @@ margin-bottom:6px;
 .about{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
+gap:70px;
 }
 
 .about p{
-color:#94a3b8;
 font-size:18px;
-line-height:1.7;
+line-height:1.8;
+color:#94a3b8;
 }
 
 /* FOOTER */
 
 footer{
 text-align:center;
-padding:60px 20px;
+padding:80px 20px;
 border-top:1px solid rgba(255,255,255,0.08);
 color:#64748b;
-font-size:14px;
+}
+
+/* SCROLL ANIMATION */
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
 }
 
 /* MOBILE */
 
 @media(max-width:900px){
 
-.hero{
+.hero-container{
 grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero h1{
+font-size:44px;
 }
 
 .about{
 grid-template-columns:1fr;
 }
 
-.hero h1{
-font-size:40px;
-}
-
-.nav-links{
-display:none;
+.phone{
+margin:auto;
 }
 
 }
@@ -252,11 +300,10 @@ display:none;
 
 <header>
 <div class="nav">
-
 <div class="logo">Bixenta<span>Dev</span></div>
 
-<div class="nav-links">
-<a href="#apps">Projeler</a>
+<div>
+<a href="#projects">Projeler</a>
 <a href="#about">Hakkımda</a>
 <a href="mailto:bixenta@bixentadev.com">İletişim</a>
 </div>
@@ -264,45 +311,41 @@ display:none;
 </div>
 </header>
 
+<div class="light light1"></div>
+<div class="light light2"></div>
 
 <section class="hero">
 
+<div class="hero-container">
+
 <div>
 
-<h1>Modern Mobil<br>Uygulamalar<br>Geliştiriyorum</h1>
+<h1>
+Modern<br>
+Mobil Ürünler<br>
+Geliştiriyorum
+</h1>
 
 <p>
-Kullanıcı odaklı, güvenli ve modern mobil uygulamalar geliştiriyorum.
-Flutter, Firebase ve modern mobil teknolojiler ile gerçek problemleri çözen ürünler inşa ediyorum.
+
+Flutter ve modern backend teknolojileri kullanarak
+gerçek problemlere çözüm üreten mobil uygulamalar
+geliştiriyorum.
+
 </p>
 
-<a href="#apps" class="btn">Projelerimi Gör</a>
+<a href="#projects" class="btn">
+Projeleri İncele
+</a>
 
 </div>
 
+<div class="phone">
 
-<div class="hero-card">
-
-<h3>Developer Profile</h3>
-
-<p style="color:#94a3b8;">
-Bağımsız mobil uygulama geliştiricisi.
-Gerçek kullanıcı problemlerine çözüm üreten ürünler geliştiriyorum.
-</p>
-
-<div class="stat">
-<span>Platform</span>
-<span>iOS / Android</span>
+<div class="screen">
+App Preview
 </div>
 
-<div class="stat">
-<span>Teknoloji</span>
-<span>Flutter / Firebase</span>
-</div>
-
-<div class="stat">
-<span>Odak</span>
-<span>Startup Apps</span>
 </div>
 
 </div>
@@ -310,59 +353,42 @@ Gerçek kullanıcı problemlerine çözüm üreten ürünler geliştiriyorum.
 </section>
 
 
+<section id="projects" class="reveal">
 
-<section id="apps">
+<h2 class="title">Projeler</h2>
 
-<h2 class="section-title">Projeler</h2>
+<div class="projects">
 
-<div class="apps">
-
-<div class="app">
-<div class="app-icon">📚</div>
+<div class="card">
+<div class="card-icon">📚</div>
 <h3>Sınav Notları</h3>
-<p>
-Üniversite öğrencileri için not paylaşım ve akademik içerik pazaryeri platformu.
-</p>
+<p>Üniversite öğrencileri için not paylaşım ve akademik içerik pazaryeri.</p>
 
 <span class="tag">Education</span>
 <span class="tag">Marketplace</span>
 <span class="tag">AI</span>
-
 </div>
 
 
-<div class="app">
-
-<div class="app-icon">💬</div>
-
+<div class="card">
+<div class="card-icon">💬</div>
 <h3>CloseApp</h3>
-
-<p>
-Konum tabanlı sosyal keşif ve mesajlaşma platformu.
-Yakındaki insanlarla güvenli şekilde iletişim kurmayı sağlar.
-</p>
+<p>Konum tabanlı sosyal keşif ve mesajlaşma platformu.</p>
 
 <span class="tag">Social</span>
 <span class="tag">Location</span>
 <span class="tag">Chat</span>
-
 </div>
 
 
-<div class="app">
-
-<div class="app-icon">🚗</div>
-
+<div class="card">
+<div class="card-icon">🚗</div>
 <h3>AutoSignal</h3>
-
-<p>
-Araç sahiplerine plaka üzerinden anonim mesaj gönderilmesini sağlayan mobil çözüm.
-</p>
+<p>Plaka üzerinden anonim iletişim sağlayan mobil çözüm.</p>
 
 <span class="tag">Utility</span>
-<span class="tag">Mobility</span>
 <span class="tag">Privacy</span>
-
+<span class="tag">Mobility</span>
 </div>
 
 </div>
@@ -370,35 +396,32 @@ Araç sahiplerine plaka üzerinden anonim mesaj gönderilmesini sağlayan mobil 
 </section>
 
 
-<section id="about">
+<section id="about" class="reveal">
 
-<h2 class="section-title">Hakkımda</h2>
+<h2 class="title">Hakkımda</h2>
 
 <div class="about">
 
 <p>
 
-Ben bağımsız bir mobil uygulama geliştiricisiyim.  
-Amacım gerçek hayattaki problemleri çözen mobil ürünler geliştirmek.
+Bağımsız bir mobil uygulama geliştiricisiyim.
 
-Projelerimde sade kullanıcı deneyimi, güvenlik ve performans önceliklidir.
+Gerçek dünyadaki problemleri çözmeye odaklanan
+ürünler geliştiriyorum.
 
-Flutter ve Firebase kullanarak iOS ve Android platformları için ölçeklenebilir uygulamalar geliştiriyorum.
+Kullanıcı deneyimi, güvenlik ve performans
+projelerimin merkezinde yer alır.
 
 </p>
 
 <p>
 
-Ürettiğim uygulamalar:
+Flutter ve Firebase kullanarak
+iOS ve Android için ölçeklenebilir
+mobil ürünler geliştiriyorum.
 
-• eğitim  
-• sosyal keşif  
-• anonim iletişim  
-• günlük hayat çözümleri  
-
-gibi alanlara odaklanır.
-
-Amacım faydalı, sürdürülebilir ve kullanıcı odaklı dijital ürünler oluşturmaktır.
+Amacım sürdürülebilir ve faydalı
+dijital ürünler oluşturmak.
 
 </p>
 
@@ -414,5 +437,29 @@ bixenta@bixentadev.com
 
 </footer>
 
+
+<script>
+
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+
+reveals.forEach(el => {
+
+const top = el.getBoundingClientRect().top;
+
+if(top < window.innerHeight - 100){
+
+el.classList.add("active");
+
+}
+
+});
+
+});
+
+</script>
+
 </body>
 </html>
+```
