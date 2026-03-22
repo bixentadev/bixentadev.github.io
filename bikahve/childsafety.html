@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiKahve - Çocuk Güvenliği Standartları</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10AC84; /* Canlı Matcha Yeşili */
+            --accent: #222F3E;  /* Koyu Antrasit / Kahve */
+            --bg: #F8F9FA;      /* Açık Gri / Beyaz Arka Plan */
+            --surface: #FFFFFF;
+            --text-main: #2D3436;
+            --text-muted: #636E72;
+            --danger: #e74c3c;
+            --warning: #f39c12;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-banner {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .header-banner h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .header-banner p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: -30px auto 50px auto;
+            background-color: var(--surface);
+            padding: 40px 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        h2 {
+            color: var(--accent);
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary);
+            display: inline-block;
+        }
+
+        p, li {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .danger-box {
+            background-color: rgba(231, 76, 60, 0.08);
+            border-left: 5px solid var(--danger);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 25px 0;
+        }
+
+        .danger-box h3 {
+            color: var(--danger);
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .info-box {
+            background-color: rgba(16, 172, 132, 0.08);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 25px 0;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-text {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+                padding: 30px 20px;
+            }
+            .header-banner h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <h1>BiKahve</h1>
+        <p>Çocuk Güvenliği Standartları ve Politikası</p>
+    </div>
+
+    <div class="container">
+        <div class="info-box">
+            <strong>Platform Amacı ve Yaş Sınırı:</strong> BiKahve, kullanıcıların şehirlerindeki etkinlikleri keşfetmeleri ve yeni aktivite partnerleri bulmaları için tasarlanmış bir sosyal ağdır. Uygulamamız <strong>YALNIZCA 18 YAŞ VE ÜZERİ YETİŞKİNLER</strong> içindir. 18 yaş altındaki bireylerin uygulamayı kullanması kesinlikle yasaktır.
+        </div>
+
+        <h2>1. SIFIR TOLERANS POLİTİKASI</h2>
+        <p>BiKahve platformunda çocukların cinsel istismarı, sömürülmesi (CSAM - Child Sexual Abuse Material), çocuklara yönelik taciz (grooming) veya çocukları içeren herhangi bir sakıncalı içerik konusunda <strong>hiçbir istisna olmaksızın sıfır tolerans politikası</strong> uygulanmaktadır.</p>
+        <p>Geliştirici ekibimiz (BixentaDev), çocuk güvenliğine karşı ulusal ve uluslararası mevzuatlara (GDPR, COPPA, KVKK) ve Apple App Store ile Google Play Store güvenlik yönergelerine tam uyum sağlamayı taahhüt eder.</p>
+
+        <div class="danger-box">
+            <h3>Kesinlikle Yasaklı Olan Davranışlar ve İçerikler</h3>
+            <ul>
+                <li>Çocukları içeren her türlü müstehcen veya cinsel içerikli materyal paylaşımı.</li>
+                <li>Çocuk istismarı veya sömürüsüne yönelik metin, görsel veya teşvik edici davranışlar.</li>
+                <li>18 yaş altı bireylerle uygunsuz iletişim kurulmaya çalışılması (grooming).</li>
+                <li>Platforma kayıt olurken yaşın yanlış beyan edilmesi veya çocuk kimliğine bürünülmesi.</li>
+                <li>Çocuklara yönelik zararlı, tehdit edici, şantaj veya istismar niteliğinde herhangi bir içeriğin üretilmesi veya dağıtılması.</li>
+            </ul>
+        </div>
+
+        <h2>2. DENETİM, RAPORLAMA VE ENGELLEME MEKANİZMALARI</h2>
+        <p>Kullanıcı güvenliğini en üst düzeyde tutmak amacıyla, BiKahve uygulaması içerisinde kesintisiz ve şeffaf bir moderasyon sistemi bulunmaktadır:</p>
+        <ul>
+            <li><strong>Kullanıcı Raporlaması:</strong> Uygulama içerisindeki "Şikayet Et" ve "Engelle" butonları sayesinde kullanıcılar, şüpheli veya uygunsuz buldukları profilleri ve mesajları anında bildirebilirler.</li>
+            <li><strong>Hızlı Müdahale:</strong> Çocuk güvenliğini tehdit eden raporlar, moderasyon ekibimiz tarafından en yüksek öncelik derecesiyle ele alınır ve <strong>en geç 24 saat içerisinde</strong> incelenip sonuçlandırılır.</li>
+            <li><strong>Hesap Kapatma:</strong> Yukarıdaki yasaklı davranışları gerçekleştiren veya 18 yaşın altında olduğu tespit edilen kullanıcıların hesapları <strong>derhal ve kalıcı olarak</strong> platformdan silinir.</li>
+        </ul>
+
+        <h2>3. YASAL MERCİLERLE İŞ BİRLİĞİ</h2>
+        <p>Çocuk güvenliğinin ihlali (özellikle çocuk istismarı materyali paylaşımı veya teşviki) durumunda BiKahve, yalnızca hesabı silmekle kalmaz; yürürlükteki kanunlar gereği <strong>kullanıcının IP adresi, kayıt bilgileri ve dijital ayak izlerini doğrudan ulusal ve uluslararası kolluk kuvvetleriyle, yetkili adli makamlarla ve Ulusal Kayıp ve Sömürülen Çocuklar Merkezi (NCMEC) gibi sivil toplum kuruluşlarıyla paylaşır.</strong> Suç teşkil eden hiçbir duruma göz yumulmaz.</p>
+
+        <h2>4. İLETİŞİM VE BİLDİRİM</h2>
+        <p>Çocuk güvenliği ile ilgili acil bir endişeniz, şikayetiniz veya yasal bir talebiniz varsa, lütfen vakit kaybetmeden bizimle iletişime geçin. Talepleriniz en yüksek gizlilik ve aciliyet ile ele alınacaktır:</p>
+        <p>
+            <strong>E-posta:</strong> <a href="mailto:bixenta@bixentadev.com">bixenta@bixentadev.com</a><br>
+            <strong>Geliştirici:</strong> BixentaDev
+        </p>
+
+        <div class="footer-text">
+            &copy; 2026 BixentaDev. Tüm hakları saklıdır. Bu politika, kullanıcılarımızın ve toplumun güvenliğini sağlamak amacıyla düzenli olarak güncellenmektedir.<br>
+            Son Güncelleme: 12 Şubat 2026
+        </div>
+    </div>
+
+</body>
+</html>
